@@ -1,3 +1,5 @@
+const Tour = require("./../model/tourModel");
+
 const fs = require("fs");
 
 const tours = JSON.parse(
