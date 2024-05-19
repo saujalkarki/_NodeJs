@@ -1,0 +1,16 @@
+{
+  "name": "restartnode",
+  "version": "1.0.0",
+  "description": "Restarting node js for a time again",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "hey": "nodemon app.js"
+  },
+  "author": "Saujal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
