@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NodeJs|Learning</title>
+    <title>NodeJs | Learning</title>
+    <link rel="stylesheet" href="./auth/login.ejs" />
   </head>
   <body>
-    <h1>I am here from SSR and code well..</h1>
-    <h3>1+1</h3>
-    <h3><%-1+1%></h3>
+    <%- include("./components/navbar.ejs")%>
   </body>
 </html>
