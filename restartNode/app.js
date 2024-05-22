@@ -1,7 +1,10 @@
 const express = require("express");
+const dbConnect = require("./config/dbConfig");
 const app = express();
 
 app.set("view engine", "ejs");
+
+dbConnect();
 
 app.get("/", (req, res) => {
   // res.send("<h1><i>We are in Home page right now.</i></h1>");
