@@ -1,11 +1,16 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+}
+.login {
+  display: none;
+}
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f3f3f3;
+  height: 90.5vh;
+  background-color: #f0f0f0;
 }
 .container {
   background-color: #fff;
@@ -50,5 +55,5 @@ h2 {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: #122792;
+  background-color: #0b0335;
 }

@@ -1,6 +1,10 @@
 const express = require("express");
 const dbConnect = require("./config/dbConfig");
+const User = require("./model/userModel");
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
@@ -24,6 +28,7 @@ app.get("/about", (req, res) => {
 });
 
 app.use(express.static("public/css"));
+app.use(express.static("public/assets/img"));
 
 const PORT = 3000;
 app.listen(PORT, (req, res) => {

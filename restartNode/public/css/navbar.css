@@ -37,16 +37,16 @@ body {
 .navbar ul li a:hover {
   color: #122792;
 }
-.navbar .SignUp,
-.navbar .LogIn {
+.navbar .signup,
+.navbar .login {
   background-color: #122792;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
 }
-.navbar .SignUp:hover,
-.navbar .LogIn:hover {
+.navbar .signup:hover,
+.navbar .login:hover {
   background-color: #0b0335;
 }
 .navbar .menu-toggle {
