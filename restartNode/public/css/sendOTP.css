@@ -2,9 +2,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
-.login {
-  display: none;
-}
 .main {
   display: flex;
   justify-content: center;
@@ -56,11 +53,4 @@ h2 {
 }
 .btn:hover {
   background-color: #0b0335;
-}
-
-.form-group1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }

@@ -11,6 +11,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .navbar .logo {
+  text-decoration: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 1.5em;
