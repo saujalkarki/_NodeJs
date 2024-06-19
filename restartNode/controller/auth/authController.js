@@ -149,6 +149,7 @@ exports.verifyOtp = async (req, res) => {
 
   // disposing OTP
   userExist[0].otp = undefined;
+  userExist[0].otpVerified = true;
   await userExist[0].save();
 
   res.json({
@@ -177,14 +178,29 @@ exports.resetPassword = async (req, res) => {
     });
   }
 
-  if (newPassword !== confirmNewPassword) {
-    res.json({
+  if (!userExist[0].otpVerified) {
+    return res.json({
       status: 400,
-      message: "please enter the same password both the time.",
+      message: "OTP isn't verified, please verify it",
     });
   }
 
-  userExist[0].password = bcrypt.hashSync(confirmNewPassword, 10);
+  if (newPassword !== confirmNewPassword) {
+    return res.json({
+      status: 400,
+      message: "please enter the new password and confirm it.",
+    });
+  }
+
+  if (bcrypt.compareSync(confirmNewPassword, userExist[0].userPassword)) {
+    return res.json({
+      status: 400,
+      message: "Please enter new unique password",
+    });
+  }
+
+  userExist[0].otpVerified = undefined;
+  userExist[0].userPassword = bcrypt.hashSync(confirmNewPassword, 10);
   await userExist[0].save();
 
   res.json({
