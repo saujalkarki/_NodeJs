@@ -1,6 +1,7 @@
 // requiring packages
 const express = require("express");
 const app = express();
+const z = require("zod");
 require("dotenv").config();
 
 // setting up templating engine-ejs
