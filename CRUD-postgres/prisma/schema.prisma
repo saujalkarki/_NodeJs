@@ -18,5 +18,14 @@ model User {
   userName String  
   userEmail String @unique
   userPassword String
+  review Review[]
+  createdAt DateTime @default(now())
+}
+
+model Review{
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  review String
   createdAt DateTime @default(now())
 }

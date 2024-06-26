@@ -13,6 +13,10 @@ const port = process.env.PORT;
 const userAuthRoute = require("./routes/user_auth_route");
 app.use("/user", userAuthRoute);
 
+// setting up reviewRoute
+const reviewRoute = require("./routes/review_route");
+app.use("/review", reviewRoute);
+
 // listening to port
 app.listen(process.env.PORT, () => {
   console.log(`server has successfully started on port ${port}.`);

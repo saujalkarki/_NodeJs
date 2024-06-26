@@ -111,7 +111,25 @@ exports.deleteUser = async (req, res) => {
 
 // read all user
 exports.readAllUser = async (req, res) => {
-  const allUser = await prisma.user.findMany();
+  // const allUser = await prisma.user.findMany({
+  //   select: {
+  //     _count: {
+  //       select: {
+  //         review: true,
+  //       },
+  //     },
+  //   },
+  // });
+
+  const allUser = await prisma.user.findMany({
+    include: {
+      review: {
+        select: {
+          review: true,
+        },
+      },
+    },
+  });
 
   if (allUser.length === 0) {
     return res.status(400).json({
@@ -136,6 +154,13 @@ exports.getSingleUser = async (req, res) => {
   const userExist = await prisma.user.findUnique({
     where: {
       id: Number(userId),
+    },
+    include: {
+      review: {
+        select: {
+          review: true,
+        },
+      },
     },
   });
 
