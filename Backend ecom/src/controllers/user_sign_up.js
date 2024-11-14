@@ -1,12 +1,11 @@
-const { json } = require("express");
 const User = require("../models/user_model");
 const bcrypt = require("bcryptjs");
 
 async function userSignUpController(req, res) {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, profilePic } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !profilePic) {
       return res.status(400).json({
         status: "Error",
         message: "Please enter all the data.",
@@ -28,6 +27,8 @@ async function userSignUpController(req, res) {
       name,
       email,
       password: bcrypt.hashSync(password, 10),
+      profilePic,
+      role: "General",
     });
 
     res.status(200).json({

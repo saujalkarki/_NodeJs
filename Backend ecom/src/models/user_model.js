@@ -10,6 +10,7 @@ const userModel = new Schema(
       required: true,
     },
     password: String,
+    role: String,
     profilePic: String,
   },
   {
