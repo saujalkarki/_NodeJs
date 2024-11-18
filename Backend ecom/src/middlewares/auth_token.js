@@ -6,11 +6,7 @@ async function authToken(req, res, next) {
     const privateKey = process.env.Jwt_Private_Key;
 
     if (!token) {
-      return res.status(400).json({
-        status: "Error",
-        message: "Please login in first.",
-        data: null,
-      });
+      return;
     }
 
     jwt.verify(token, privateKey, function (err, decoded) {

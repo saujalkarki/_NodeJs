@@ -37,7 +37,6 @@ async function userSignUpController(req, res) {
       data: newUser,
     });
   } catch (err) {
-    console.log(err);
     res.status(400).json({
       status: "Error",
       message: err,

@@ -5,8 +5,6 @@ async function allUsers(req, res) {
     const user = await User.findById(req.userId);
     const allUser = await User.find();
 
-    console.log(allUser);
-
     return res.status(200).json({
       status: "Success",
       message: "users fetched successfully",
