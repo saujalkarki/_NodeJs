@@ -1,5 +1,5 @@
-const allowUploadProduct = require("../helpers/allow_to");
-const Product = require("../models/product_model");
+const allowUploadProduct = require("../../helpers/allow_to");
+const Product = require("../../models/product_model");
 
 async function uploadProduct(req, res) {
   try {
